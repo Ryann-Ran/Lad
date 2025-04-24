@@ -1,0 +1,26 @@
+vqgan_ckpt: checkpoints/vq_gan/ABDOMENCT1K/ABDOMENCT1K/lightning_logs/version_0/checkpoints/epoch=124-step=100000-10000-train/recon_loss=0.10.ckpt
+
+diffusion_img_size: 64
+diffusion_depth_size: 8
+diffusion_num_channels: 8
+dim_mults: [1,2,4,8]
+results_folder: checkpoints/ddpm/ABDOMENCT1K
+results_folder_postfix: ''
+load_milestone: False
+
+batch_size: 5
+num_workers: 20
+logger: wandb
+objective: pred_x0
+save_and_sample_every: 1000
+denoising_fn: Unet3D
+train_lr: 1e-4
+gradient_accumulate_every: 1
+timesteps: 300
+sampling_timesteps: 250 # number of sampling timesteps (using ddim for faster inference [see citation for ddim paper])
+loss_type: l1 # L1 or L2
+train_num_steps: 700000 # total training steps
+ema_decay: 0.995 # exponential moving average decay
+amp: True # turn on mixed precision
+num_sample_rows: 1
+gpus: 0

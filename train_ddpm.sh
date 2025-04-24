@@ -1,0 +1,1 @@
+PL_TORCH_DISTRIBUTED_BACKEND=nccl NCCL_P2P_DISABLE=1 CUDA_VISIBLE_DEVICES=0,6 python -m torch.distributed.launch --nproc_per_node=2 --use_env train_ddpm.py

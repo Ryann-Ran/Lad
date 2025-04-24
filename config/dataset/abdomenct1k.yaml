@@ -1,0 +1,3 @@
+name: ABDOMENCT1K
+root_dir: ./data/ABDOMENCT1K/image
+image_channels: 1

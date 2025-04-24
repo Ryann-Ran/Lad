@@ -1,0 +1,1 @@
+PL_TORCH_DISTRIBUTED_BACKEND=nccl CUDA_VISIBLE_DEVICES=0 python train_vqgan.py dataset=abdomenct1k model=vq_gan_3d model.default_root_dir_postfix='ABDOMENCT1K'
