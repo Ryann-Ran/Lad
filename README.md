@@ -1,4 +1,8 @@
-# Overview
+<div align="center">
+<h1>Devil is in Details: Locality-Aware 3D Abdominal CT Volume Generation for Self-Supervised Organ Segmentation</h1>
+</div>
+
+
 This is the official implementation of **[Devil is in Details: Locality-Aware 3D Abdominal CT Volume Generation for Self-Supervised Organ Segmentation](https://dl.acm.org/doi/abs/10.1145/3664647.3680588) (ACM MM 2024)**
 
 # Environment Setup
