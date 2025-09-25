@@ -12,10 +12,7 @@ conda env create -f environment.yml
 ```
 
 # Data Preparation
-## Data Download
 The AbdomenCT-1K dataset can be downloaded from [this repository](https://github.com/JunMa11/AbdomenCT-1K).
-## Data Preprocessing
-Preprocessing scripts will be released soon.
 
 # Training
 ## VQ-GAN
