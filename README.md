@@ -16,7 +16,8 @@ conda env create -f environment.yml
 The AbdomenCT-1K dataset can be downloaded from [this repository](https://github.com/JunMa11/AbdomenCT-1K).
 
 ## Data Preprocessing
-1. Resampling and Cropping
+**1. Resampling and Cropping**
+
 For both the image and the **ground truth mask** (i.e., the label mask, *not* the predicted mask from [UniverSeg](https://github.com/JJGO/UniverSeg)), please run the following script to perform resampling and center cropping:
 ```bash
 python data_preprocessing/resample.py
@@ -26,10 +27,12 @@ Then, execute the following script to perform depth cropping:
 python data_preprocessing/depth_crop.py
 ```
 
-2. Obtaining Predicted Masks (Prioir)
+**2. Obtaining Predicted Masks (Prioir)**
+
 Please visit the official [UniverSeg repository](https://github.com/JJGO/UniverSeg) to generate the predicted masks, which will be used as the **prioir**.
 
-3. Normalization and Topological Feature Extraction
+**3. Normalization and Topological Feature Extraction**
+
 Before training, preprocess both the image and the **predicted mask** (from UniverSeg, *not* the label mask) by running the following script to normalize and convert them into `.npy` format:
 ```bash
 python data_preprocessing/normalize.py
