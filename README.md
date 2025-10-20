@@ -18,35 +18,41 @@ The AbdomenCT-1K dataset can be downloaded from [this repository](https://github
 
 ## Data Preprocessing
 **1. Resampling and Cropping**
+
 For both the image and the **ground truth mask** (i.e., the label mask, *not* the predicted mask from [UniSeg](https://github.com/yeerwen/UniSeg)), please run the following script to perform resampling and center cropping:
-    ```bash
-    python data_preprocessing/resample.py
-    ```
-    Then, execute the following script to perform depth cropping:
-    ```bash
-    python data_preprocessing/depth_crop.py
-    ```
+
+```bash
+python data_preprocessing/resample.py
+```
+Then, execute the following script to perform depth cropping:
+```bash
+python data_preprocessing/depth_crop.py
+```
 
 **2. Obtaining Predicted Masks (Prioir)**
+
 Please visit the official [UniSeg repository](https://github.com/yeerwen/UniSeg) to generate the predicted masks, which will be used as the **prioir**.
 
-    In addition to the official steps provided in the UniSeg repository, we also include our own example scripts:
-    ```bash
-    # Run prediction (outputs will be saved as .nii files)
-    bash data_preprocessing/UniSeg_scripts/1_predict.sh
-    # Optionally evaluate the predictions
-    bash data_preprocessing/UniSeg_scripts/2_evaluate.sh
-    ```
+In addition to the official steps provided in the UniSeg repository, we also include our own example scripts:
+
+```bash
+# Run prediction (outputs will be saved as .nii files)
+bash data_preprocessing/UniSeg_scripts/1_predict.sh
+# Optionally evaluate the predictions
+bash data_preprocessing/UniSeg_scripts/2_evaluate.sh
+```
 
 **3. Normalization and Topological Feature Extraction**
+
 Before training, preprocess both the image and the **predicted mask** (from UniSeg, *not* the label mask) by running the following script to normalize and convert them into `.npy` format:
-    ```bash
-    python data_preprocessing/normalize.py
-    ```
-    To reduce computation time during training, extract the topological features of the predicted mask in advance by running:
-    ```bash
-    python data_preprocessing/topo.py
-    ```
+
+```bash
+python data_preprocessing/normalize.py
+```
+To reduce computation time during training, extract the topological features of the predicted mask in advance by running:
+```bash
+python data_preprocessing/topo.py
+```
 
 # Training
 ## VQ-GAN
